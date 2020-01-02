@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Timer</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="lang.js"></script>
+  <script src="timer.js"></script>
+</head>
+<body onload="setLanguage(); initScreen()">
+  <div class="language">
+    <label for="language-selector">
+      <lang text-id="language-title"></lang>
+      <select name="language" id="language-selector" onchange="setLanguage(event)">
+      </select>
+    </label>
+    <span id="clear-language" onclick="clearLanguage()">&times;</span>
+  </div>
+  <div id="config">
+    <p><lang text-id="card-title"></lang></p>
+    <form onsubmit="setDate(event)">
+      <label for="future-date">
+        <lang text-id="card-date"></lang> 
+        <input type="date" name="date" id="future-date" required>
+      </label>
+      <br>
+      <label for="future-hour">
+        <lang text-id="card-hour"></lang> 
+        <input type="number" name="hour" id="future-hour" min="0" max="23">
+      </label>
+      <br>
+      <label for="future-minute">
+        <lang text-id="card-minute"></lang> 
+        <input type="number" name="minute" id="future-minute" min="0" max="59">
+      </label>
+      <br>
+      <label for="future-second">
+        <lang text-id="card-second"></lang> 
+        <input type="number" name="second" id="future-second" min="0" max="59">
+      </label>
+      <br>
+      <button type="submit">
+        <lang text-id="card-submit"></lang>
+      </button>
+    </form>
+  </div>
+  <div id="timer">
+    <p><lang text-id="timer-title"></lang></p>
+    <p id="counter"></p>
+    <button onclick="resetTimer()">
+      <lang text-id="timer-reset"></lang>
+    </button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+/* GENERAL STYLE */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(135deg, #0f0952, #5d2da7);
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, button, select {
+  font-family: 'Roboto';
+}
+
+.card-leave {
+  animation: card-leave 1s ease-in-out forwards;
+  position: absolute;
+  z-index: 1000;
+}
+
+.card-enter {
+  animation: card-leave 1s ease-in-out reverse;
+  position: absolute;
+  z-index: 1000;
+}
+
+.timer-leave {
+  animation: timer-leave 1s ease-in-out forwards;
+}
+
+.timer-enter {
+  animation: timer-leave 1s ease-in-out reverse;
+}
+
+/* LANGUAGE SELECTOR STYLE */
+
+div.language {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+}
+
+#language-selector {
+  background: none;
+  color: white;
+  position: relative;
+  outline: none;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+#clear-language {
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+#clear-language:hover {
+  background: white;
+  color: #5d2da7;
+  font-weight: bold;
+}
+
+/* CONFIG STYLE */
+#config {
+  background: white;
+  padding: 30px 30px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px 1px #333333;
+  font-size: 22px;
+}
+
+#config p {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  opacity: 0.5;
+}
+
+#config form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#config label {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-weight: lighter;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+#config input {
+  width: 100%;
+  border: none;
+  margin-left: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  margin-top: -2px;
+  transition: all 200ms ease-in-out;
+}
+
+#config input:focus {
+  border-bottom: 1px solid #5d2da7;
+}
+
+#config button {
+  font-size: 22px;
+  background: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 200ms ease-in-out;
+  font-weight: lighter;
+  color: #5d2da7;
+  border-radius: 4px;
+}
+
+#config button:hover {
+  background: #eeeeee;
+}
+
+/* TIMER STYLE */
+#timer {
+  color: white;
+  font-size: 48px;
+  font-weight: medium;
+  text-align: center;
+}
+
+#timer p {
+  padding: 0;
+  margin: 30px;
+}
+
+#counter {
+  font-size: 54px;
+  font-weight: bold;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+#timer button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: lighter;
+  opacity: 0.5;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+#timer button:hover {
+  opacity: 0.8;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes card-leave {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes timer-leave {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
